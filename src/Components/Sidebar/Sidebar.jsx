@@ -6,7 +6,7 @@ const Sidebar = (props) => {
     return (
         <div>
             <h3>Collections</h3>
-            <CollectionContainer />
+            <CollectionContainer collections={props.collections} />
         </div>
 
      );

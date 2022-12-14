@@ -4,6 +4,7 @@ import { Container,  Row, Col } from 'react-bootstrap';
 import './App.css';
 
 function App() {
+
   return (
     <Container fluid>
       <Row>
@@ -12,7 +13,7 @@ function App() {
         </Col>
       </Row>
       <Row>
-        <Main />
+        <Main/>
       </Row>
 
     </Container>
