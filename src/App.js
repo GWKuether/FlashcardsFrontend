@@ -9,13 +9,14 @@ function App() {
     <Container fluid>
       <Row>
         <Col>
-        <Header />
+          <Header />
         </Col>
       </Row>
       <Row>
-        <Main/>
+        <Col xs={8}>
+          <Main/>
+        </Col>
       </Row>
-
     </Container>
   );
 }

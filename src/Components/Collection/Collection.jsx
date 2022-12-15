@@ -1,7 +1,17 @@
 const Collection = (props) => {
+    
+    function handleClick(cardId){
+        props.retrieveID(cardId)
+    }
     return ( 
-        <p>here's that collection you ordered</p>
-     );
+        <div>
+        {props.collections.map((collection) =>{
+            return (
+                <h4 onClick={()=>handleClick(collection.id)}>{collection.title}</h4>
+            )
+        })}
+    </div>
+    );
 }
  
 export default Collection;

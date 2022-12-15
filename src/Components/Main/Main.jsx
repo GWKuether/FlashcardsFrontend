@@ -12,6 +12,7 @@ const Main = (props) => {
 
     const  [collections, setCollections] = useState([])
     const [cards, setCards] = useState([])
+    const [cardID, setCardID] = useState('')
   
     useEffect(() => {
       getAllCollections();
@@ -19,17 +20,25 @@ const Main = (props) => {
   
     useEffect(() => {
       getCards();
-    }, [])
+    })
   
     async function getAllCollections(){
       let response = await axios.get("http://127.0.0.1:8000/api/collections/")
       setCollections(response.data)
     }
   
+
     async function getCards(){
-      let response = await axios.get(`http://127.0.0.1:8000/api/collections/1/cards/`)
+      let response = await axios.get(`http://127.0.0.1:8000/api/collections/${cardID}/cards/`)
       setCards(response.data)
     }
+
+    function retrieveID(cardID){
+      console.log(cardID)
+      setCardID(cardID)
+    }
+
+
   
 
 
@@ -40,11 +49,11 @@ const Main = (props) => {
         <Container fluid>
             <Row>
                 <Col>
-                <Sidebar collections={collections}/>
+                <Sidebar collections={collections} retrieveID={retrieveID}/>
                 </Col>
             </Row>
             <Row>
-                <Col>
+                <Col xs={6}>
                 <CardContainer cards={cards} />
                 </Col>
             </Row>
