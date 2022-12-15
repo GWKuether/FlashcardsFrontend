@@ -49,12 +49,12 @@ const Main = (props) => {
         <Container fluid>
             <Row>
                 <Col>
-                <Sidebar collections={collections} retrieveID={retrieveID}/>
+                  <Sidebar collections={collections} retrieveID={retrieveID}/>
                 </Col>
             </Row>
             <Row>
-                <Col xs={6}>
-                <CardContainer cards={cards} />
+                <Col>
+                  <CardContainer cards={cards} />
                 </Col>
             </Row>
         </Container>
