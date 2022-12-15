@@ -28,14 +28,17 @@ const Main = (props) => {
     }
   
 
-    async function getCards(){
-      let response = await axios.get(`http://127.0.0.1:8000/api/collections/${cardID}/cards/`)
-      setCards(response.data)
-    }
-
+    
     function retrieveID(cardID){
       console.log(cardID)
       setCardID(cardID)
+    }
+
+
+
+    async function getCards(){
+      let response = await axios.get(`http://127.0.0.1:8000/api/collections/${cardID}/cards/`)
+      setCards(response.data)
     }
 
 
