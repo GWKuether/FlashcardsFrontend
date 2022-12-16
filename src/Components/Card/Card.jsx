@@ -7,18 +7,32 @@ const Card = (props) => {
     const [index, setIndex] = useState(0)
 
     
+
+
     function handlePrevious(){
-        setIndex(index - 1)
         if (index < 0){
             setIndex(props.cards[-1].id)
+            console.log(props.cards[index]?.word)
         }
-        setDisplayToggle(true)
+        else{
+            setIndex(index - 1)
+            setDisplayToggle(true)
+        }
+
     }
     
     
     function handleNext(){
-        setIndex(index + 1)
-        setDisplayToggle(true)
+        if (props.cards[index] === undefined){
+            setIndex(0)
+            setDisplayToggle(true)
+        }
+        else{
+            setIndex(index + 1)
+            console.log(props.cards[index]?.word)
+            setDisplayToggle(true)
+        }
+
     }
     
  

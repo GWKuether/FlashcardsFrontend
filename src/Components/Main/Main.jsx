@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Sidebar from '../Sidebar/Sidebar';
 import CardContainer from '../CardContainer/CardContainer';
-import { Container,  Row, Col } from 'react-bootstrap';
+
 
 
 
@@ -49,20 +49,40 @@ const Main = (props) => {
 
 
     return (
-        <Container fluid>
-            <Row>
-                <Col>
-                  <Sidebar collections={collections} retrieveID={retrieveID}/>
-                </Col>
-            </Row>
-            <Row>
-                <Col>
-                  <CardContainer cards={cards} />
-                </Col>
-            </Row>
-        </Container>
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <Sidebar collections={collections} retrieveID={retrieveID} />
+          </div>
+        </div>
+        <div className='row'>
+          <div className='col-3'></div>
+          <div className="col-6">
+            <CardContainer cards={cards} cardID={cardID} />
+          </div>
+          <div className="col-3"></div>
+        </div>
+      </div>
+
 
      );
 }
  
 export default Main;
+
+
+
+
+
+        // <Container fluid>
+        //     <Row>
+        //         <Col>
+        //           <Sidebar collections={collections} retrieveID={retrieveID}/>
+        //         </Col>
+        //     </Row>
+        //     <Row>
+        //         <Col>
+        //           <CardContainer cards={cards} />
+        //         </Col>
+        //     </Row>
+        // </Container>
