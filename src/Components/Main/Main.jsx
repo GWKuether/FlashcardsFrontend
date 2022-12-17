@@ -12,7 +12,7 @@ const Main = (props) => {
 
     const  [collections, setCollections] = useState([])
     const [cards, setCards] = useState([])
-    const [cardID, setCardID] = useState('')
+    const [collectionID, setCollectionID] = useState('')
   
     useEffect(() => {
       getAllCollections();
@@ -29,15 +29,15 @@ const Main = (props) => {
   
 
     
-    function retrieveID(cardID){
-      console.log(cardID)
-      setCardID(cardID)
+    function retrieveID(collectionID){
+      console.log(collectionID)
+      setCollectionID(collectionID)
     }
 
 
 
     async function getCards(){
-      let response = await axios.get(`http://127.0.0.1:8000/api/collections/${cardID}/cards/`)
+      let response = await axios.get(`http://127.0.0.1:8000/api/collections/${collectionID}/cards/`)
       setCards(response.data)
     }
 
@@ -58,7 +58,7 @@ const Main = (props) => {
         <div className='row'>
           <div className='col-3'></div>
           <div className="col-6">
-            <CardContainer cards={cards} cardID={cardID} />
+            <CardContainer cards={cards} collectionID={collectionID} />
           </div>
           <div className="col-3"></div>
         </div>

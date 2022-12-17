@@ -1,7 +1,7 @@
 const Collection = (props) => {
     
-    function handleClick(cardId){
-        props.retrieveID(cardId)
+    function handleClick(collectionId){
+        props.retrieveID(collectionId)
     }
     return ( 
         <div>

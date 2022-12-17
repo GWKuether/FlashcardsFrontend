@@ -13,7 +13,7 @@ const AddCard = (props) => {
             definition: definition
         }
         console.log(newCard)
-        console.log(props.cardID)
+        console.log(props.collectionID)
         addNewCard(newCard)
     }
 
@@ -22,7 +22,7 @@ const AddCard = (props) => {
       }, [])
 
     async function addNewCard(newCard){
-        await axios.post(`http://127.0.0.1:8000/api/collections/${props.cardID}/cards/`, newCard)
+        await axios.post(`http://127.0.0.1:8000/api/collections/${props.collectionID}/cards/`, newCard)
     }
 
 
