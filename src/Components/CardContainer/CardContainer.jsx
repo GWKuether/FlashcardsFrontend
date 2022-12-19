@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
 import CardViewer from "../CardViewer/CardViewer";
 import AddCard from "../AddCard/AddCard";
-import EditCard from '../EditCard/EditCard';
+import DeleteCard from '../DeleteCard/DeleteCard';
+
 
 const CardContainer = (props) => {
 
     const [displayAddToggle, setDisplayAddToggle] = useState(true)
-    const [displayEditToggle, setDisplayEditToggle] = useState(true)
+    const [displayDeleteToggle, setDisplayDeleteToggle] = useState(true)
+    const [cardID, setCardID] = useState('')
 
+    function getCardID(cardID){
+        setCardID(cardID)
+        console.log(cardID)
+    }
 
 
     return (
@@ -15,7 +21,7 @@ const CardContainer = (props) => {
             <div className="row align-items-start">
                 <div className="col">
                     <div>
-                        <button onClick={() => setDisplayEditToggle(!displayEditToggle)}>Edit</button>
+                        <button onClick={() => setDisplayDeleteToggle(!displayDeleteToggle)}>Delete</button>
                     </div>
                 </div>
                 <div className="col">
@@ -34,7 +40,8 @@ const CardContainer = (props) => {
                 </div>
                 <div className="col">
                     {displayAddToggle ? <CardViewer cards={props.cards}/> : <AddCard collectionID={props.collectionID}/>}
-                    {displayEditToggle ? <CardViewer cards={props.cards}/> : <EditCard collectionID={props.collectionID} cards={props.cards}/>}
+                    {displayDeleteToggle ? <CardViewer cards={props.cards} getCardID={getCardID} /> : <DeleteCard collectionID={props.collectionID} cards={props.cards} cardID={cardID} />} 
+
                 </div>
                 <div className="col">
                 3 of 3

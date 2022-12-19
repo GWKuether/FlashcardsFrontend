@@ -26,12 +26,23 @@ const Card = (props) => {
         if (props.cards[index] === undefined){
             setIndex(0)
             setDisplayToggle(true)
+            RetrieveCardID(props.cards[index]?.id)
         }
         else{
             setIndex(index + 1)
             console.log(props.cards[index]?.word)
             setDisplayToggle(true)
+            RetrieveCardID(props.cards[index]?.id)
+            
         }
+
+    }
+    
+     
+
+    
+    function RetrieveCardID(cardID){
+    props.getCardID(cardID)
 
     }
     
