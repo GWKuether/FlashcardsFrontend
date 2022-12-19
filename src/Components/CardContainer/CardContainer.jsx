@@ -15,13 +15,17 @@ const CardContainer = (props) => {
         console.log(cardID)
     }
 
+    function handleDelete(){
+        alert('Do you want to delete this card? If yes, click red Delete Button')
+        setDisplayDeleteToggle(!displayDeleteToggle)
+    }
 
     return (
         <div className="container-fluid border">
             <div className="row align-items-start">
                 <div className="col">
                     <div>
-                        <button onClick={() => setDisplayDeleteToggle(!displayDeleteToggle)}>Delete</button>
+                        <button onClick={() => handleDelete()}>Delete</button>
                     </div>
                 </div>
                 <div className="col">
