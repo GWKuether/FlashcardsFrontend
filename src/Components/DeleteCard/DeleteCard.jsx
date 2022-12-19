@@ -11,7 +11,7 @@ const DeleteCard = (props) => {
     
     return ( 
         <div>
-            <button onClick={handleSubmit} key={props.cardID}>Delete</button>
+            <button onClick={handleSubmit} >Delete</button>
         </div>
 
      );

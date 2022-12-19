@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CardViewer from "../CardViewer/CardViewer";
 import AddCard from "../AddCard/AddCard";
 import DeleteCard from '../DeleteCard/DeleteCard';
@@ -12,12 +12,13 @@ const CardContainer = (props) => {
 
     function getCardID(cardID){
         setCardID(cardID)
-        console.log(cardID)
     }
+
 
     function handleDelete(){
         alert('Do you want to delete this card? If yes, click red Delete Button')
         setDisplayDeleteToggle(!displayDeleteToggle)
+        
     }
 
     return (
@@ -43,8 +44,8 @@ const CardContainer = (props) => {
                 1 of 3
                 </div>
                 <div className="col">
-                    {displayAddToggle ? <CardViewer cards={props.cards}/> : <AddCard collectionID={props.collectionID}/>}
-                    {displayDeleteToggle ? <CardViewer cards={props.cards} getCardID={getCardID} /> : <DeleteCard collectionID={props.collectionID} cards={props.cards} cardID={cardID} />} 
+                    {displayAddToggle  ? <CardViewer displayButtons={true} getCardID={getCardID} cards={props.cards}/> : <AddCard collectionID={props.collectionID}/>}
+                    {displayDeleteToggle  ? null : <DeleteCard collectionID={props.collectionID} cards={props.cards} cardID={cardID} />} 
 
                 </div>
                 <div className="col">
