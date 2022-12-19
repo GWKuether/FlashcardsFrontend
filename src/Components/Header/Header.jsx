@@ -1,6 +1,8 @@
+import './Header.css'
+
 const Header = (props) => {
     return ( 
-        <div>
+        <div className="header-background">
             <h1>
                 FLASHCARDS
             </h1>

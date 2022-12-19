@@ -7,6 +7,7 @@ import CardContainer from '../CardContainer/CardContainer';
 
 
 
+
 const Main = (props) => {
 
 
@@ -49,13 +50,13 @@ const Main = (props) => {
 
 
     return (
-      <div className="container">
+      <div style={{"position":"absolute","marginLeft":"2rem","width":"100%"}} className="container main-border">
         <div className="row">
           <div className="col">
             <Sidebar collections={collections} retrieveID={retrieveID} />
           </div>
         </div>
-        <div className='row'>
+        <div className='row main-background main-border'>
           <div className='col-3'></div>
           <div className="col-6">
             <CardContainer cards={cards} collectionID={collectionID} />
@@ -69,20 +70,3 @@ const Main = (props) => {
 }
  
 export default Main;
-
-
-
-
-
-        // <Container fluid>
-        //     <Row>
-        //         <Col>
-        //           <Sidebar collections={collections} retrieveID={retrieveID}/>
-        //         </Col>
-        //     </Row>
-        //     <Row>
-        //         <Col>
-        //           <CardContainer cards={cards} />
-        //         </Col>
-        //     </Row>
-        // </Container>

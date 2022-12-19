@@ -6,7 +6,7 @@ import './App.css';
 function App() {
 
   return (
-    <div className="container">
+    <div className="container main-background">
       <div className="row">
         <div className="col">
           <Header />
@@ -23,22 +23,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
-    // <Container fluid>
-    //   <Row>
-    //     <Col>
-    //     <p>Hello this is to format</p>
-    //       <Header />
-    //     </Col>
-    //   </Row>
-    //   <Row>
-    //     <Col>
-    //     <p>Formatter number 2 here</p>
-    //       <Main/>
-    //     </Col>
-    //   </Row>
-    // </Container>
