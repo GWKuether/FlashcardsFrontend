@@ -46,7 +46,7 @@ const CardContainer = (props) => {
             </div>
             <div className="row align-items-end">
                 <div className="col">
-                <button onClick={() => <EditCard />}>Edit</button>
+                < EditCard />
                 </div>
                 <div className="col">
                     {displayAddToggle  ? <CardViewer displayButtons={true} getCardID={getCardID} setCardIndex={setCardIndex} cards={props.cards} displayDeleteToggle = {displayDeleteToggle}/> : <AddCard collectionID={props.collectionID}/>}
