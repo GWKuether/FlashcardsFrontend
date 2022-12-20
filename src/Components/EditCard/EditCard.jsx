@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form'
 
 const EditCard = (props) => {
     
-    const [word, setWord] = useState(`${props.collectionID.word}`)
+    // const [word, setWord] = useState(`${props.collectionID.word}`)
     // const [definition, setDefinition] = useState(`${props.collectionID.definition}`)
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -44,7 +44,7 @@ const EditCard = (props) => {
                 <Form.Label>Word</Form.Label>
                 <Form.Control
                   type="textarea"
-                  placeholder={`${word}`}
+                  placeholder='does this work at all?'
                   autoFocus
                 />
               </Form.Group>
