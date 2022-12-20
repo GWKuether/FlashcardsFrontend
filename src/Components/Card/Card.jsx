@@ -5,9 +5,9 @@ const Card = (props) => {
   const [index, setIndex] = useState(0);
 
   function handlePrevious() {
-    if (index < 0) {
-      setIndex(props.cards[-1].id);
-      console.log(props.cards[index]?.word);
+    if (props.cards[index] === undefined) {
+      setIndex(props.cards.length - 1);
+      console.log(props.cards[index]?.id);
     } else {
       setIndex(index - 1);
       setDisplayToggle(true);
@@ -26,14 +26,18 @@ const Card = (props) => {
   }
 
   function RetrieveCardID(cardID) {
-    console.log(cardID)
-    props.getCardID(cardID)
+    console.log(cardID);
+    props.getCardID(cardID);
+  }
+
+  function RetrieveCardIndex(cardIndex){
+    console.log(cardIndex)
+    
   }
 
   useEffect(() => {
     RetrieveCardID(props.cards[index]?.id);
-  },[props.cards[index]?.id])
-
+  }, [props.cards[index]?.id]);
 
   return (
     <div>
@@ -45,12 +49,13 @@ const Card = (props) => {
             <h4>{props.cards[index]?.definition}</h4>
           )}
         </div>
-     
+
+        {props.displayDeleteToggle === true && (
           <div>
             <button onClick={() => handlePrevious()}>PREVIOUS</button>
             <button onClick={() => handleNext()}>NEXT</button>
           </div>
-    
+        )}
       </div>
     </div>
   );

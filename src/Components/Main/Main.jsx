@@ -50,18 +50,18 @@ const Main = (props) => {
 
 
     return (
-      <div style={{"position":"absolute","marginLeft":"2rem","width":"100%"}} className="container main-border">
+      <div style={{"marginLeft":"2rem","width":"100%"}} className="container main-border">
         <div className="row">
-          <div className="col">
+          <div className="col"  style={{position:"absolute", "width":"15%"}}>
             <Sidebar collections={collections} retrieveID={retrieveID} />
           </div>
         </div>
         <div className='row main-background main-border'>
-          <div className='col-3'></div>
-          <div className="col-6">
+          <div className='col-2'></div>
+          <div className="col-8">
             <CardContainer cards={cards} collectionID={collectionID} />
           </div>
-          <div className="col-3"></div>
+          <div className="col-2"></div>
         </div>
       </div>
 

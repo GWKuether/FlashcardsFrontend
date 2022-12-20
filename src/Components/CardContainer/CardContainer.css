@@ -2,6 +2,12 @@
     box-shadow: 5px 10px #2D2A32
 }
 
+.card-border{
+    border-style: solid;
+    border-color: #2D2A32;
+    border-width: 5px;
+}
+
 .background{
     background-color: #FAFDF6;
 }

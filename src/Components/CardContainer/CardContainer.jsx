@@ -11,10 +11,15 @@ const CardContainer = (props) => {
     const [displayAddToggle, setDisplayAddToggle] = useState(true)
     const [displayDeleteToggle, setDisplayDeleteToggle] = useState(true)
     const [cardID, setCardID] = useState('')
+    const [cardIndex, setCardIndex] = useState('1')
 
     function getCardID(cardID){
         setCardID(cardID)
     }
+
+    function getCardIndex(cardIndex){{
+        setCardIndex(cardIndex)
+    }}
 
 
     function handleDelete(){
@@ -24,8 +29,8 @@ const CardContainer = (props) => {
     }
 
     return (
-        <div className="container-fluid border box-shadow background">
-            <div className="row align-items-start">
+        <div className="box-shadow card-border container-fluid background d-flex flex-column text-center justify-content-between">
+            <div className="row ">
                 <div className="col">
                     <div>
                         <button onClick={() => handleDelete()}>Delete</button>
@@ -45,7 +50,7 @@ const CardContainer = (props) => {
                     
                 </div>
                 <div className="col">
-                    {displayAddToggle  ? <CardViewer displayButtons={true} getCardID={getCardID} cards={props.cards}/> : <AddCard collectionID={props.collectionID}/>}
+                    {displayAddToggle  ? <CardViewer displayButtons={true} getCardID={getCardID} getCardIndex={getCardIndex} cards={props.cards} displayDeleteToggle = {displayDeleteToggle}/> : <AddCard collectionID={props.collectionID}/>}
                     {displayDeleteToggle  ? null : <DeleteCard collectionID={props.collectionID} cards={props.cards} cardID={cardID} />} 
                 </div>
                 <div className="col">
@@ -62,21 +67,3 @@ export default CardContainer;
 
 
 
-{/* 
-
-
-<div className="row align-items-end">
-                <div className="col">
-                1of 3
-                <div>
-                <div className="col">
-
-
-                </div>
-                <div className="col">
-                3 of 3
-                </div>
-                </div>
-            </div>
-        </div>
-        </div> */}
