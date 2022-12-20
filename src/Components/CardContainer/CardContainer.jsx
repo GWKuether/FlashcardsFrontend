@@ -3,6 +3,7 @@ import CardViewer from "../CardViewer/CardViewer";
 import AddCard from "../AddCard/AddCard";
 import DeleteCard from '../DeleteCard/DeleteCard';
 import EditCard from '../EditCard/EditCard'
+import './CardContainer.css'
 
 
 const CardContainer = (props) => {
@@ -23,7 +24,7 @@ const CardContainer = (props) => {
     }
 
     return (
-        <div className="container-fluid border">
+        <div className="container-fluid border box-shadow background">
             <div className="row align-items-start">
                 <div className="col">
                     <div>

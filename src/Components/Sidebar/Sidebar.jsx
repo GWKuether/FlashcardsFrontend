@@ -1,11 +1,12 @@
 import CollectionContainer from "../CollectionContainer/CollectionContainer";
+import './Sidebar.css'
 
 
 
 const Sidebar = (props) => {
     return (
-        <div className="border">
-            <h3>Collections</h3>
+        <div>
+            <h3 className="italics">Collections</h3>
             <CollectionContainer collections={props.collections} retrieveID={props.retrieveID} />
         </div>
 

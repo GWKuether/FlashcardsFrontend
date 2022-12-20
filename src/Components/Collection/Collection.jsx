@@ -7,7 +7,7 @@ const Collection = (props) => {
         <div>
         {props.collections.map((collection) =>{
             return (
-                <h4 onClick={()=>handleClick(collection.id)}>{collection.title}</h4>
+                <h4 className='border' onClick={()=>handleClick(collection.id)}>{collection.title}</h4>
             )
         })}
     </div>
