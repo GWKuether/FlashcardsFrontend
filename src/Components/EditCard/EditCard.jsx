@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 // import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import Form from 'react-bootstrap/Form'
 
 const EditCard = (props) => {
     
-    // const [word, setWord] = useState(`${props.collectionID.word}`)
+    const [word, setWord] = useState(`${props.collectionID.word}`)
     // const [definition, setDefinition] = useState(`${props.collectionID.definition}`)
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -29,26 +30,44 @@ const EditCard = (props) => {
 
     return (
         <>
-        <Button variant="primary" onClick={handleShow}>
-          Launch demo modal
+        <Button variant="dark" onClick={handleShow}>
+          Edit
         </Button>
   
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
+            <Modal.Title>Edit Current Card</Modal.Title>
           </Modal.Header>
-          <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+          <Modal.Body>
+            <Form>
+              <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                <Form.Label>Word</Form.Label>
+                <Form.Control
+                  type="textarea"
+                  placeholder={`${word}`}
+                  autoFocus
+                />
+              </Form.Group>
+              <Form.Group
+                className="mb-3"
+                controlId="exampleForm.ControlTextarea1"
+              >
+                <Form.Label>Definition</Form.Label>
+                <Form.Control as="textarea" rows={3} />
+              </Form.Group>
+            </Form>
+          </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
+            <Button variant="light" onClick={handleClose}>
               Close
             </Button>
-            <Button variant="primary" onClick={handleClose}>
+            <Button variant="dark" onClick={handleClose}>
               Save Changes
             </Button>
           </Modal.Footer>
         </Modal>
       </>
-    );
+    )
 }
  
 export default EditCard;
