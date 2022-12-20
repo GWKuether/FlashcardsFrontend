@@ -37,7 +37,7 @@ const CardContainer = (props) => {
                     </div>
                 </div>
                 <div className="col">
-                    <h6>Cards: {props.cards.length}</h6>
+                    <h6>{cardIndex} / {props.cards.length}</h6>
                 </div>
                 <div className="col">
                     <div>
