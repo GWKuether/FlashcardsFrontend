@@ -1,14 +1,9 @@
-.box-shadow{
-    box-shadow: 5px 10px #2D2A32
-}
-
-.card-border{
+.collection-border{
     border-style: solid;
     border-color: #2D2A32;
     border-width: 2px;
 }
 
 .background{
-    margin: 1rem;
     background-color: #FAFDF6;
 }

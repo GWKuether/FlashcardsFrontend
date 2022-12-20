@@ -35,13 +35,9 @@ const Card = (props) => {
   }, [props.cards[index]?.id]);
 
   
-  function RetrieveCardIndex(cardIndex){
-    console.log(cardIndex)
-    props.getCardIndex(cardIndex)
-  }
 
   useEffect(() => {
-    RetrieveCardIndex(index)
+    props.setCardIndex(index + 1)
   }, [index])
 
 

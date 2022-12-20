@@ -11,7 +11,7 @@ const CardContainer = (props) => {
     const [displayAddToggle, setDisplayAddToggle] = useState(true)
     const [displayDeleteToggle, setDisplayDeleteToggle] = useState(true)
     const [cardID, setCardID] = useState('')
-    const [cardIndex, setCardIndex] = useState('1')
+    const [cardIndex, setCardIndex] = useState(0)
 
     function getCardID(cardID){
         setCardID(cardID)
@@ -50,7 +50,7 @@ const CardContainer = (props) => {
                     
                 </div>
                 <div className="col">
-                    {displayAddToggle  ? <CardViewer displayButtons={true} getCardID={getCardID} getCardIndex={getCardIndex} cards={props.cards} displayDeleteToggle = {displayDeleteToggle}/> : <AddCard collectionID={props.collectionID}/>}
+                    {displayAddToggle  ? <CardViewer displayButtons={true} getCardID={getCardID} setCardIndex={setCardIndex} cards={props.cards} displayDeleteToggle = {displayDeleteToggle}/> : <AddCard collectionID={props.collectionID}/>}
                     {displayDeleteToggle  ? null : <DeleteCard collectionID={props.collectionID} cards={props.cards} cardID={cardID} />} 
                 </div>
                 <div className="col">

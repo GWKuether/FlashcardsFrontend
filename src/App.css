@@ -6,7 +6,7 @@ html, .main-background{
 }
 
 .border{
-    border: 2em;
-    border-color: #2D2A32;
     border-style: solid;
+    border-color: #2D2A32;
+    border-width: 2px;
 }

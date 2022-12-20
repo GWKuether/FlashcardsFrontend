@@ -52,7 +52,7 @@ const Main = (props) => {
     return (
       <div style={{"marginLeft":"2rem","width":"100%"}} className="container main-border">
         <div className="row">
-          <div className="col"  style={{position:"absolute", "width":"15%"}}>
+          <div className="col"  style={{position:"absolute", "width":"10%"}}>
             <Sidebar collections={collections} retrieveID={retrieveID} />
           </div>
         </div>
