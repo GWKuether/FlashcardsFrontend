@@ -23,7 +23,6 @@ const CardContainer = (props) => {
 
 
     function handleDelete(){
-        alert('Do you want to delete this card? If yes, click red Delete Button')
         setDisplayDeleteToggle(!displayDeleteToggle)
         
     }
