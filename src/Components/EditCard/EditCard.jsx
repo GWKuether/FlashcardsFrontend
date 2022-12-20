@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form'
 
 const EditCard = (props) => {
     
+    const [id, setID] = useState('')
     const [word, setWord] = useState('')
     const [definition, setDefinition] = useState('')
     const [show, setShow] = useState(false);
@@ -13,9 +14,14 @@ const EditCard = (props) => {
     const handleShow = () => setShow(true);
 
 
+    function handleSubmit(){
+        axios.put(`http://127.0.0.1:8000/api/collections/${props.collectionID}/cards/${id}/`)
+    }
+
     
 
     useEffect(() => {
+        setID(props.card?.id)
         setWord(props.card?.word)
         setDefinition(props.card?.definition)
     }, [props.card])
@@ -54,7 +60,7 @@ const EditCard = (props) => {
             <Button variant="light" onClick={handleClose}>
               Close
             </Button>
-            <Button variant="dark" onClick={handleClose}>
+            <Button variant="dark" onClick={handleSubmit}>
               Save Changes
             </Button>
           </Modal.Footer>

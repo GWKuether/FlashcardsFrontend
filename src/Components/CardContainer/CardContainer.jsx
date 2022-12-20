@@ -48,7 +48,7 @@ const CardContainer = (props) => {
                 <div className="col">
                 </div>
                 <div className="col">
-                    {displayAddToggle  ? <CardViewer displayButtons={true} getCardID={getCardID} setCardIndex={setCardIndex} cards={props.cards} displayDeleteToggle = {displayDeleteToggle}/> : <AddCard collectionID={props.collectionID}/>}
+                    {displayAddToggle  ? <CardViewer collectionID={props.collectionID} displayButtons={true} getCardID={getCardID} setCardIndex={setCardIndex} cards={props.cards} displayDeleteToggle = {displayDeleteToggle}/> : <AddCard collectionID={props.collectionID}/>}
                     {displayDeleteToggle  ? null : <DeleteCard collectionID={props.collectionID} cards={props.cards} cardID={cardID} />} 
                 </div>
                 <div className="col">

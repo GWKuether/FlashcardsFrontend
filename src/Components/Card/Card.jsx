@@ -58,7 +58,7 @@ const Card = (props) => {
           <div>
             <button onClick={() => handlePrevious()}>PREVIOUS</button>
             <button onClick={() => handleNext()}>NEXT</button>
-            <EditCard card={props.cards[index]} />
+            <EditCard card={props.cards[index]} collectionID={props.collectionID} />
           </div>
         )}
       </div>

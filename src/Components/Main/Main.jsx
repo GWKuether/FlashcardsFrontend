@@ -31,7 +31,6 @@ const Main = (props) => {
 
     
     function retrieveID(collectionID){
-      console.log(collectionID)
       setCollectionID(collectionID)
     }
 
