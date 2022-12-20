@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import EditCard from "../EditCard/EditCard";
 
 const Card = (props) => {
   const [displayToggle, setDisplayToggle] = useState(true);
@@ -57,6 +58,7 @@ const Card = (props) => {
           <div>
             <button onClick={() => handlePrevious()}>PREVIOUS</button>
             <button onClick={() => handleNext()}>NEXT</button>
+            <EditCard card={props.cards[index]} />
           </div>
         )}
       </div>
